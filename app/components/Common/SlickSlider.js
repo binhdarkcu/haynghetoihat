@@ -2,26 +2,48 @@ import React from 'react';
 import Slider from 'react-slick';
 
 export default class SlickSlider extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            data:
+            [
+                {
+                    'id': 1,
+                    'name': 'Slider 1',
+                    'src': '../app/assets/img/slider-1.jpg'
+                },
+                {
+                    'id': 2,
+                    'name': 'Slider 2',
+                    'src': '../app/assets/img/slider-1.jpg'
+                }
+            ]
+        };
+    }
+
     render() {
+        function PrevButton({ onClick }) {
+            return <a onClick={onClick} className="slick-arrow slick-prev" style={{ left: '15px' }}></a>;
+        }
+
+        function NextButton({ onClick }) {
+            return <a onClick={onClick} className="slick-arrow slick-next" style={{ right: '15px' }}></a>;
+        }
         const settings = {
             dots: true,
             infinite: true,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
+            prevArrow: <PrevButton />,
+            nextArrow: <NextButton />
         };
         return (
-            <div>
-                <h2> Single Item</h2>
+            <ul className="slickSlider">
                 <Slider {...settings}>
-                    <div><h3>1</h3></div>
-                    <div><h3>2</h3></div>
-                    <div><h3>3</h3></div>
-                    <div><h3>4</h3></div>
-                    <div><h3>5</h3></div>
-                    <div><h3>6</h3></div>
+                    {this.state.data.map((slider, i) => (<li key={i}><img src={slider.src} /></li>))}
                 </Slider>
-            </div>
+            </ul>
         );
     }
 }

@@ -1,3 +1,99 @@
-header{
- 
+header {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+    z-index: 100;
+}
+
+.slickSlider {
+    position: relative;
+}
+
+.slickSlider .slick-arrow{
+    background: url("/app/assets/img/arrow.png") transparent  left center no-repeat;
+    width: 18px;
+    height: 30px;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    margin-top: -15px;
+    cursor: pointer;
+}
+
+.slickSlider .slick-next{
+    background-position: right center;
+}
+
+.slick-dots{
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+}
+
+.slick-dots li {
+    display: inline-block;
+    background: #b3b3b3;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 12px;
+}
+.slick-dots li.slick-active{
+    height: 12px;
+    width: 12px;
+    background: #fff;
+    position: relative;
+    top: 0;
+}
+.slick-dots li button{
+    background: transparent;
+    border: none;
+    text-indent: -9999px;
+    outline: none;
+    cursor: pointer;
+}
+
+nav{
+    position: absolute;
+    top: 20px;
+    z-index: 100;
+    right: 50px;
+}
+
+nav li{
+    float: left;
+    margin-left: 34px;
+}
+nav li a{
+    display: inline-block;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+a.btn-search{
+    background: url("/app/assets/img/search-icon.png") transparent  center no-repeat;
+    width: 25px;
+    height: 25px;
+}
+a.btn-notification{
+    background: url("/app/assets/img/bell-icon.png") transparent  center no-repeat;
+    width: 25px;
+    height: 25px;
+}
+a.btn-avatar{
+    background: #ccc;
+    height: 38px;
+    width: 38px;
+    text-align: center;
+    position: relative;
+    top: -7px;
+}
+a.btn-avatar img{
+    margin-top: 6px;
 }
