@@ -5,6 +5,4 @@ const Home = () =>
         Hey homepage
 
     </section>;
-
-
 export default Home;
