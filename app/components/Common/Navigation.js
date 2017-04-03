@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navigation = () =>
-  <nav>
-    <ul>
-        <li><a href="#" className="btn-search"></a></li>
-        <li><a href="#" className="btn-notification"></a></li>
-        <li><a href="#" className="btn-avatar"><img src="/app/assets/img/avatar.png"/></a></li>
-        <li><a href="#">Đăng nhập</a></li>
-    </ul>
+  <nav className="main-nav">
+      <Link to="/">Trang chủ</Link>
+      <Link to="/truyen-hinh">Truyền hình</Link>
+      <Link to="/tv-show">TV SHOW</Link>
+      <Link to="/tv-show">Cải lương</Link>
+      <Link to="/phim-thieu-nhi">Phim việt nam</Link>
+      <Link to="/phim-nuoc-ngoai">Phim nước ngoài</Link>
+      <Link to="/thieu-nhi">thiếu nhi</Link>
+      <Link to="/ca-nhac">ca nhạc</Link>
   </nav>;
 export default Navigation;

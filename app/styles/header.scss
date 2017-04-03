@@ -58,30 +58,31 @@ header {
     cursor: pointer;
 }
 
-nav{
+header nav{
     position: absolute;
     top: 20px;
     z-index: 100;
     right: 50px;
 }
 
-nav li{
+header nav li{
     float: left;
     margin-left: 34px;
 }
-nav li a{
+header nav li a{
     display: inline-block;
     border-radius: 50%;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 18px;
 }
-a.btn-search{
+header a.btn-search{
     background: url("/app/assets/img/search-icon.png") transparent  center no-repeat;
     width: 25px;
     height: 25px;
 }
-a.btn-notification{
+header a.btn-notification{
     background: url("/app/assets/img/bell-icon.png") transparent  center no-repeat;
     width: 25px;
     height: 25px;

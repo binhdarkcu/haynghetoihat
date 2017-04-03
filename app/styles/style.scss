@@ -5,8 +5,14 @@
 body, html{
   padding: 0; margin: 0;
 }
+body{
+    background: #262626;
+}
 a{
     text-decoration: none;
+}
+a:hover{
+    color: #376bfb;
 }
 .container {
   width: 1366px;

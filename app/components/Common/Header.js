@@ -1,12 +1,12 @@
 import React from 'react';
-import Navigation from './Navigation';
+import NavigationTop from './NavigationTop';
 import SlickSlider from './SlickSlider';
 
 const Header = () =>
   <header>
     <div className="container">
         <a href="#" className="logo"><img src="../app/assets/img/logo.png" /></a>
-        <Navigation />
+        <NavigationTop />
         <SlickSlider />
     </div>
   </header>;
