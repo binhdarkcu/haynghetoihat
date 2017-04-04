@@ -13,19 +13,20 @@ header {
     position: relative;
 }
 
-.slickSlider .slick-arrow{
-    background: url("/app/assets/img/arrow.png") transparent  left center no-repeat;
-    width: 18px;
-    height: 30px;
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    margin-top: -15px;
-    cursor: pointer;
-}
-
-.slickSlider .slick-next{
-    background-position: right center;
+.slickSlider, .sliderBlock {
+    .slick-arrow{
+        background: url("/app/assets/img/arrow.png") transparent  left center no-repeat;
+        width: 18px;
+        height: 30px;
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        margin-top: -15px;
+        cursor: pointer;
+    }
+    .slick-next{
+        background-position: right center;
+    }
 }
 
 .slick-dots{

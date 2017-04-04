@@ -11,10 +11,56 @@ body{
 a{
     text-decoration: none;
 }
-a:hover{
+a:hover {
     color: #376bfb;
 }
 .container {
-  width: 1366px;
+  width: 100%;
   margin: 0 auto;
+}
+.sliderBlock {
+    clear: both;
+    color: #fff;
+    padding-top: 36px;
+    .item {
+        float: left;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 0 3px;
+    }
+    .head {
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .description {
+        background: #000;
+        min-height: 74px;
+        padding: 0px 15px;
+        h6 {
+            font-size: 18px;
+            padding: 14px 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
+        .play {
+            font-size: 14px;
+            float: left;
+            background: url("/app/assets/img/icon/i-play.png") transparent  left center no-repeat;
+            padding-left: 24px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
+        .heart {
+            font-size: 14px;
+            float: left;
+            background: url("/app/assets/img/icon/heart.png") transparent  left center no-repeat;
+            padding-left: 28px;
+            height: 16px;
+            line-height: 16px;
+            margin-left: 30px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
+    }
 }

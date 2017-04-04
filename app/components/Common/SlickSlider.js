@@ -16,6 +16,16 @@ export default class SlickSlider extends React.Component {
                     'id': 2,
                     'name': 'Slider 2',
                     'src': '../app/assets/img/slider-1.jpg'
+                },
+                {
+                    'id': 2,
+                    'name': 'Slider 2',
+                    'src': '../app/assets/img/slider-1.jpg'
+                },
+                {
+                    'id': 2,
+                    'name': 'Slider 2',
+                    'src': '../app/assets/img/slider-1.jpg'
                 }
             ]
         };

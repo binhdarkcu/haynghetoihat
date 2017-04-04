@@ -1,10 +1,30 @@
 .home{
-
+    .head{
+        padding-top: 50px;
+        h3.title{
+            font-family: "Roboto", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            padding-left: 45px;
+            float: left;
+        }
+        a.viewall{
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            color: #fff;
+            padding-right: 23px;
+            margin-right: 45px;
+            background: url("/app/assets/img/icon/arrow_small.png") transparent  right center no-repeat;
+            float:right;
+        }
+    }
 }
 .main-nav{
     margin-top: 29px;
     border-bottom: 2px solid #333;
     padding-bottom: 25px;
+    text-align: center;
 }
 .main-nav a{
     font-family: 'Roboto', sans-serif;
@@ -12,7 +32,7 @@
     font-weight: 400;
     text-transform: uppercase;
     color: #ccc;
-    margin: 0 15px;
+    margin: 0 1%;
 }
 .main-nav a:hover{
     color: #376bfb;

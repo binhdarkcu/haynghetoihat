@@ -1,47 +1,46 @@
 import React from 'react';
-import Slider from 'react-slick';
-import CategoryItem from './CategoryItem';
+import BlockSlider from 'react-slick';
 
-export default class categoryList extends React.Component {
+export class categoryList extends React.Component {
     constructor() {
         super();
         this.state = {
-            data:
+            category:
             [
                 {
                     'id': 1,
                     'name': 'Ai sẽ là ngôi sao',
                     'view': 205,
                     'like': 56,
-                    'src': '../app/assets/img/v-1.jpg'
+                    'src': '../app/assets/img/img-video/img01.png'
                 },
                 {
                     'id': 2,
                     'name': 'Ban nhạc quyền năng',
                     'view': 205,
                     'like': 56,
-                    'src': '../app/assets/img/v-1.jpg'
+                    'src': '../app/assets/img/img-video/img02.png'
                 },
                 {
-                    'id': 1,
+                    'id': 3,
                     'name': 'Cặp đôi hài hước',
                     'view': 205,
                     'like': 56,
-                    'src': '../app/assets/img/v-1.jpg'
+                    'src': '../app/assets/img/img-video/img03.png'
                 },
                 {
-                    'id': 1,
+                    'id': 4,
                     'name': 'Chuyện cảnh giác',
                     'view': 205,
                     'like': 56,
-                    'src': '../app/assets/img/v-1.jpg'
+                    'src': '../app/assets/img/img-video/img04.png'
                 },
                 {
-                    'id': 1,
+                    'id': 5,
                     'name': 'Hãy nghe tôi hát',
                     'view': 205,
                     'like': 56,
-                    'src': '../app/assets/img/v-1.jpg'
+                    'src': '../app/assets/img/img-video/img05.png'
                 }
             ]
         };
@@ -55,21 +54,33 @@ export default class categoryList extends React.Component {
         function NextButton({ onClick }) {
             return <a onClick={onClick} className="slick-arrow slick-next" style={{ right: '15px' }}></a>;
         }
-        const settings = {
-            dots: true,
+        const blocksettings = {
+            dots: false,
             infinite: true,
             speed: 500,
             slidesToShow: 5,
             slidesToScroll: 5,
+            centerMode: true,
+            centerPadding: '3px',
             prevArrow: <PrevButton />,
             nextArrow: <NextButton />
         };
         return (
-            <ul className="slickSlider">
-                <Slider {...settings}>
-                    {this.state.data.map((slider, i) => <CategoryItem key = {i} data = {slider} />)}
-                </Slider>
-            </ul>
+            <div className="sliderBlock">
+                <BlockSlider {...blocksettings}>
+                    {this.state.category.map((category, i) => (
+                        <article key={i} className="item">
+                            <img src={category.src} />
+                            <div className="description">
+                                <h6>{category.name}</h6>
+                                <div className="play">205 Lượt xem</div>
+                                <div className="heart">56 Yêu thích</div>
+                            </div>
+                        </article>
+                    ))}
+                </BlockSlider>
+            </div>
         );
     }
 }
+export default categoryList;
