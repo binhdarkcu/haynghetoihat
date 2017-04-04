@@ -7,11 +7,11 @@ const Home = () =>
             <h3 className="title">ĐANG XEM</h3>
             <a href="#" className="viewall">Tất cả</a>
         </div>
-        <CategoryList />
+        <CategoryList categoryType = {'viewing'}/>
         <div className="head">
             <h3 className="title">THVL ĐỀ XUẤT</h3>
             <a href="#" className="viewall">Tất cả</a>
         </div>
-        <CategoryList />
+        <CategoryList categoryType = {'recommend'}/>
     </section>;
 export default Home;
