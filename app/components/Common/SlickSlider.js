@@ -49,6 +49,7 @@ export default class SlickSlider extends React.Component {
             nextArrow: <NextButton />
         };
         return (
+
             <ul className="slickSlider">
                 <Slider {...settings}>
                     {this.state.data.map((slider, i) => (<li key={i}><img src={slider.src} /></li>))}
