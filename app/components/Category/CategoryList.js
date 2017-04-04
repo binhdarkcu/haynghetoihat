@@ -4,7 +4,11 @@ import BlockSlider from 'react-slick';
 export class categoryList extends React.Component {
     constructor() {
         super();
+        this.onMouseEnter  = this.handleMouseEnter.bind(this);
+        this.onMouseLeave  = this.handleMouseLeave.bind(this);
         this.state = {
+            width: '',
+            height: '',
             category:
             [
                 {
@@ -45,14 +49,21 @@ export class categoryList extends React.Component {
             ]
         };
     }
-
+    handleMouseEnter(event) {
+        document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
+        event.currentTarget.parentElement.parentElement.style.overflow = 'visible';
+    }
+    handleMouseLeave(event) {
+        document.getElementsByTagName('body')[0].removeAttribute('style');
+        event.currentTarget.parentElement.parentElement.removeAttribute('style');
+    }
     render() {
         function PrevButton({ onClick }) {
-            return <a onClick={onClick} className="slick-arrow slick-prev" style={{ left: '15px' }}></a>;
+            return <a onClick={onClick} className="slick-arrow slick-prev"><span></span></a>;
         }
 
         function NextButton({ onClick }) {
-            return <a onClick={onClick} className="slick-arrow slick-next" style={{ right: '15px' }}></a>;
+            return <a onClick={onClick} className="slick-arrow slick-next"><span></span></a>;
         }
         const blocksettings = {
             dots: false,
@@ -65,17 +76,21 @@ export class categoryList extends React.Component {
             prevArrow: <PrevButton />,
             nextArrow: <NextButton />
         };
+
+
         return (
             <div className="sliderBlock">
                 <BlockSlider {...blocksettings}>
                     {this.state.category.map((category, i) => (
-                        <article key={i} className="item">
-                            <img src={category.src} />
-                            <div className="description">
-                                <h6>{category.name}</h6>
-                                <div className="play">205 Lượt xem</div>
-                                <div className="heart">56 Yêu thích</div>
-                            </div>
+                        <article key={i} className="item" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} >
+                            <a href="#">
+                                <img src={category.src} />
+                                <div className="description">
+                                    <h6>{category.name}</h6>
+                                    <div className="play">205 Lượt xem</div>
+                                    <div className="heart">56 Yêu thích</div>
+                                </div>
+                            </a>
                         </article>
                     ))}
                 </BlockSlider>

@@ -4,6 +4,7 @@
 @import 'footer.scss';
 body, html{
   padding: 0; margin: 0;
+  overflow-x: hidden;
 }
 body{
     background: #262626;
@@ -22,11 +23,67 @@ a:hover {
     clear: both;
     color: #fff;
     padding-top: 36px;
+    a.slick-arrow{
+        height: 100%;
+        top: 0;
+        margin-top: 0;
+        background: transparent;
+        span{
+            background: url("/app/assets/img/arrow.png") transparent  left center no-repeat;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+        &:after{
+            content: "";
+            background: #000;
+            opacity: 0.7;
+            position: absolute;
+            width: 45px;
+            height: 100%;
+            left: -10px;
+        }
+        &.slick-prev{
+            left: 10px;
+        }
+        &.slick-next{
+            right: 10px;
+            span{
+                background-position: right center;
+            }
+        }
+    }
     .item {
         float: left;
         border-radius: 5px;
-        overflow: hidden;
         margin: 0 3px;
+        overflow: hidden;
+        -webkit-transition: all 200ms ease-out;
+        -webkit-transform: scale(1);
+        -ms-transition: all 200ms ease-out;
+        -ms-transform: scale(1);
+        -moz-transition: all 200ms ease-out;
+        -moz-transform: scale(1);
+        transition: all 200ms ease-out;
+        transform: scale(1);
+        a{
+            color: #fff;
+        }
+        &:hover{
+            box-shadow: 0px 0px 150px #000000;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-out;
+            -webkit-transform: scale(1.5);
+            -ms-transition: all 200ms ease-out;
+            -ms-transform: scale(1.5);
+            -moz-transition: all 200ms ease-out;
+            -moz-transform: scale(1.5);
+            transition: all 200ms ease-out;
+            transform: scale(1.5);
+            position: relative;
+            z-index: 99;
+        }
     }
     .head {
         h3 {
