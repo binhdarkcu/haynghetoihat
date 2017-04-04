@@ -59,35 +59,122 @@ header {
     cursor: pointer;
 }
 
-header nav{
-    position: absolute;
-    top: 20px;
-    z-index: 100;
-    right: 50px;
+header {
+    .wrap{
+        position: absolute;
+        min-height: 60px;
+        width: 100%;
+        z-index: 2;
+        &:after{
+            content: "";
+            position: absolute;
+            background: #0d0d0d;
+            opacity: 0.8;
+            width: 100%;
+            height: 60px;
+        }
+    }
+    nav{
+        position: absolute;
+        top: 20px;
+        z-index: 100;
+        right: 50px;
+        li{
+            float: left;
+            margin-left: 34px;
+            position: relative;
+            a{
+                display: inline-block;
+                border-radius: 50%;
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                font-size: 18px;
+            }
+            ul.submenu{
+                position: absolute;
+                top: 55px;
+                right: 0;
+                width: 130px;
+                display: none;
+                li{
+                    position: relative;
+                    z-index: 1;
+                    margin-left: 1px;
+                    width: 100%;
+                    a{
+                        font-size: 14px;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 400;
+                        color: #ccc;
+                        padding: 12px 0;
+                        display: block;
+                        padding-left: 20px;
+                        &:hover{
+                            background: #376bfb;
+                            border-radius: 0;
+                        }
+                    }
+                    &.signout{
+                        border-top: 1px solid #333537;
+                    }
+                }
+                &:after, &:before{
+                    content:"";
+                    position: absolute;
+                }
+                &:before{
+                    width: 0;
+                      height: 0;
+                      border-left: 5px solid transparent;
+                      border-right: 5px solid transparent;
+                      border-bottom: 5px solid #000;
+                      top: -4px;
+                        left: 50%;
+                        margin-left: -7px;
+                }
+                &:after{
+                    background: #000;
+                    opacity: 0.7;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                }
+            }
+            &:hover{
+                ul.submenu{
+                    display: block;
+                }
+            }
+            &.username{
+                padding-bottom: 40px;
+            }
+        }
+
+    }
+    a.btn-search{
+        background: url("/app/assets/img/search-icon.png") transparent  center no-repeat;
+        width: 25px;
+        height: 25px;
+    }
+    a.btn-notification{
+        background: url("/app/assets/img/bell-icon.png") transparent  center no-repeat;
+        width: 25px;
+        height: 25px;
+        position: relative;
+        span{
+            background: #f72533;
+            border-radius: 40px;
+            padding: 5px 7px;
+            color: #fff;
+            font-size: 12px;
+            position: absolute;
+            right: -10px;
+            top: -4px;
+        }
+    }
 }
 
-header nav li{
-    float: left;
-    margin-left: 34px;
-}
-header nav li a{
-    display: inline-block;
-    border-radius: 50%;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-}
-header a.btn-search{
-    background: url("/app/assets/img/search-icon.png") transparent  center no-repeat;
-    width: 25px;
-    height: 25px;
-}
-header a.btn-notification{
-    background: url("/app/assets/img/bell-icon.png") transparent  center no-repeat;
-    width: 25px;
-    height: 25px;
-}
 a.btn-avatar{
     background: #ccc;
     height: 38px;

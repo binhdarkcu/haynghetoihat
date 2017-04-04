@@ -4,8 +4,10 @@ import SlickSlider from './SlickSlider';
 
 const Header = () =>
   <header>
-        <a href="#" className="logo"><img src="../app/assets/img/logo.png" /></a>
-        <NavigationTop />
+        <div className="wrap">
+            <a href="#" className="logo"><img src="../app/assets/img/logo.png" /></a>
+            <NavigationTop />
+        </div>
         <SlickSlider />
   </header>;
 export default Header;
