@@ -1,7 +1,7 @@
 import React from 'react';
 import BlockSlider from 'react-slick';
 
-export default (categoryType) => class categoryList extends React.Component {
+export default class categoryList extends React.Component {
     constructor() {
         super();
         this.onMouseEnter  = this.handleMouseEnter.bind(this);
@@ -101,7 +101,6 @@ export default (categoryType) => class categoryList extends React.Component {
         };
     }
     handleMouseEnter(event) {
-        document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
         event.currentTarget.parentElement.parentElement.style.overflow = 'visible';
     }
     handleMouseLeave(event) {
@@ -146,4 +145,4 @@ export default (categoryType) => class categoryList extends React.Component {
             </div>
         );
     }
-};
+}
