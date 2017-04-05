@@ -145,3 +145,31 @@ a:hover {
         }
     }
 }
+.videoWrap{
+    background: #000;
+}
+.videoContainer{
+    width: 80%;
+    margin: 0 auto;
+    .videojs{
+        width: 100%;
+    }
+}
+
+.detailTabs{
+    text-align: center;padding-top: 22px;
+
+    a{
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        margin: 0 20px;
+        padding-bottom: 15px;
+        display: inline-block;
+        &:hover, &.active{
+            border-bottom: 4px solid #376bfb;
+        }
+    }
+}
