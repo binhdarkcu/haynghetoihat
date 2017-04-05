@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import BlockSlider from 'react-slick';
 
 export default class categoryList extends React.Component {
-    constructor() {
-        super();
+    static propTypes = {
+        categoryType: PropTypes.object.isRequired
+    }
+    constructor(props) {
+        super(props);
         this.onMouseEnter  = this.handleMouseEnter.bind(this);
         this.onMouseLeave  = this.handleMouseLeave.bind(this);
         this.state = {
@@ -126,21 +129,29 @@ export default class categoryList extends React.Component {
             prevArrow: <PrevButton />,
             nextArrow: <NextButton />
         };
+        let rows = [];
+        this.state.category.map((category) => {
+            const typeC = category.type.toLowerCase();
+            const filterC = this.props.categoryType.toLowerCase();
+            if(typeC.indexOf(filterC) !== -1 ) {
+                rows.push(
+                    <article className="item" >
+                        <a href="#">
+                            <img src={category.src} />
+                            <div className="description">
+                                <h6>{category.name}</h6>
+                                <div className="play">{category.view} Lượt xem</div>
+                                <div className="heart">{category.like} Yêu thích</div>
+                            </div>
+                        </a>
+                    </article>
+                );
+            }
+        });
         return (
             <div className="sliderBlock">
                 <BlockSlider {...blocksettings}>
-                    {this.state.category.map((category, i) => (
-                        <article key={i} className="item" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} >
-                            <a href="#">
-                                <img src={category.src} />
-                                <div className="description">
-                                    <h6>{category.name}</h6>
-                                    <div className="play">{category.view} Lượt xem</div>
-                                    <div className="heart">{category.like} Yêu thích</div>
-                                </div>
-                            </a>
-                        </article>
-                    ))}
+                    {rows}
                 </BlockSlider>
             </div>
         );
