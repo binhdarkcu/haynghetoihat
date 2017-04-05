@@ -134,9 +134,10 @@ export default class categoryList extends React.Component {
             const typeC = category.type.toLowerCase();
             const filterC = this.props.categoryType.toLowerCase();
             if(typeC.indexOf(filterC) !== -1 ) {
+                const href = 'video/?id=' + category.id;
                 rows.push(
                     <article className="item" >
-                        <a href="#">
+                        <a href={href}>
                             <img src={category.src} />
                             <div className="description">
                                 <h6>{category.name}</h6>
